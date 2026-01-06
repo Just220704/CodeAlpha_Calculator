@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d5e6f7; /* classic light grey */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Glassmorphism card */
+.calculator {
+    width: 340px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
+}
+
+/* Title */
+.calculator h2 {
+    color: #f1a342;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Display */
+#display {
+    width: 100%;
+    height: 65px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    text-align: right;
+    padding: 12px;
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Base button */
+button {
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.15s ease;
+}
+
+/* Hover & press */
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Operator buttons */
+button[data-value="+"],
+button[data-value="-"],
+button[data-value="*"],
+button[data-value="/"] {
+    background: #ffb703;
+    color: #1a1a1a;
+}
+
+/* Clear & delete */
+.action {
+    background: #ef476f;
+    color: #ffffff;
+}
+
+/* Equal button */
+.equal {
+    background: #06d6a0;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+/* Zero button */
+.zero {
+    grid-column: span 2;
+}
+
+/* Keyboard hint */
+.hint {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #f1f1f1;
+    opacity: 0.85;
+}
